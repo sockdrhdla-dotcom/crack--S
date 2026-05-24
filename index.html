@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>찰떡궁합 룸메이트 테스트 | 당신의 운명적인 셰어하우스 메이트는?</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Noto Sans KR -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Noto Sans KR', sans-serif; }
@@ -20,10 +18,8 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-rose-200 selection:text-rose-900">
 
-    <!-- [1] 인트로 & 퀴즈 섹션 -->
     <section id="quiz-section" class="min-h-screen flex items-center justify-center p-4 fade-in">
         <div class="max-w-lg w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
-            <!-- 인트로 화면 -->
             <div id="intro-screen" class="p-8 text-center">
                 <div class="mb-6 inline-block p-4 bg-rose-50 rounded-full">
                     <svg class="w-12 h-12 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
@@ -35,7 +31,6 @@
                 </button>
             </div>
 
-            <!-- 질문 화면 -->
             <div id="question-screen" class="p-8 hide">
                 <div class="w-full bg-slate-100 rounded-full h-2 mb-6">
                     <div id="progress-bar" class="bg-rose-500 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
@@ -49,18 +44,15 @@
         </div>
     </section>
 
-    <!-- [2] 결과 섹션 -->
     <section id="result-section" class="hide fade-in min-h-screen bg-slate-50">
         <div class="md:flex md:min-h-screen max-w-6xl mx-auto bg-white md:shadow-2xl md:my-0">
             
-            <!-- 왼쪽: 캐릭터 이미지 -->
             <div class="md:w-1/2 bg-slate-200 relative">
                 <div class="aspect-square w-full md:h-screen md:sticky md:top-0">
                     <img id="char-image" src="" alt="캐릭터 일러스트" class="w-full h-full object-cover shadow-inner">
                 </div>
             </div>
 
-            <!-- 오른쪽: 텍스트 정보 및 대화 버튼 -->
             <div class="md:w-1/2 p-6 md:p-12 lg:p-16 flex flex-col justify-center relative">
                 <div class="mb-8">
                     <span class="inline-block py-1 px-3 rounded-full bg-rose-100 text-rose-600 text-sm font-bold tracking-wider mb-4">당신의 완벽한 메이트</span>
@@ -68,8 +60,7 @@
                     <p id="char-subtitle" class="text-xl text-slate-500 font-medium mb-6">서브 타이틀</p>
                     
                     <div id="char-tags" class="flex flex-wrap gap-2 mb-8">
-                        <!-- 태그가 자바스크립트로 주입됩니다 -->
-                    </div>
+                        </div>
 
                     <div class="prose prose-slate max-w-none">
                         <p id="char-desc" class="text-slate-600 leading-relaxed text-lg mb-6">캐릭터 상세 설명</p>
@@ -81,18 +72,15 @@
                     </div>
                 </div>
 
-                <!-- 하단 고정 버튼 -->
                 <div class="fixed bottom-0 left-0 w-full p-4 bg-white/90 backdrop-blur-sm border-t border-slate-100 md:relative md:bg-transparent md:border-none md:p-0 md:backdrop-blur-none z-50">
-                    <!-- 요청하신 링크 추가 완료 -->
-                    <button onclick="location.href='https://share.crack.wrtn.ai/wwu4nb3'" class="w-full bg-slate-900 hover:bg-rose-500 text-white font-bold py-4 px-8 rounded-xl transition-colors duration-300 shadow-xl shadow-slate-200/50 flex justify-center items-center gap-2 text-lg">
+                    <a href="https://share.crack.wrtn.ai/wwu4nb3" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-rose-500 text-white font-bold py-4 px-8 rounded-xl transition-colors duration-300 shadow-xl shadow-slate-200/50 flex justify-center items-center gap-2 text-lg cursor-pointer">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                         이 캐릭터와 대화하기
-                    </button>
+                    </a>
                     <button onclick="location.reload()" class="w-full mt-3 text-slate-400 hover:text-slate-600 font-medium py-2 text-sm text-center md:hidden">
                         테스트 다시하기
                     </button>
                 </div>
-                <!-- PC용 테스트 다시하기 -->
                 <button onclick="location.reload()" class="hidden md:block mt-6 text-slate-400 hover:text-slate-600 font-medium py-2 text-sm text-left transition-colors">
                     ↺ 테스트 다시하기
                 </button>
@@ -101,7 +89,6 @@
         </div>
     </section>
 
-    <!-- 인터렉션 로직 -->
     <script>
         const questions = [
             {
